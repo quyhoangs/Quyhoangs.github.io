@@ -342,7 +342,12 @@
 
 </html>
 <script type="text/javascript" >
-  const countEl = document.getElementById('count');
+ let count = localStorage.getItem('count') || 0;                             
+ count++;
+  localStorage.setItem('count', count);
+  document.getElementById('count').innerHTML = count;
+                              
+<!--   const countEl = document.getElementById('count');
 
   updateVisitCount();
 
@@ -352,6 +357,6 @@
     .then(res => {
       countEl.innerHTML = res.value;
     })
-  }
+  } -->
 
 </script>
